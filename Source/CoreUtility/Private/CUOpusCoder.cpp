@@ -109,7 +109,7 @@ bool FCUOpusCoder::EncodeStream(const TArray<uint8>& InPCMBytes, FCUOpusMinimalS
 
 		if (EncodedBytes < 0)
 		{
-			UE_LOG(LogTemp, Warning, TEXT("opus_encode err: %s"), opus_strerror(EncodedBytes));
+			UE_LOG(LogTemp, Warning, TEXT("opus_encode err: %hs"), opus_strerror(EncodedBytes));
 			return false;
 		}
 		OutStream.CompressedBytes.Append(TempBuffer.GetData(), EncodedBytes);
@@ -164,7 +164,7 @@ bool FCUOpusCoder::DecodeStream(const FCUOpusMinimalStream& InStream, TArray<uin
 		}
 		else if (DecodedSamples < 0)
 		{
-			UE_LOG(LogTemp, Log, TEXT("%s"), opus_strerror(DecodedSamples));
+			UE_LOG(LogTemp, Log, TEXT("%hs"), opus_strerror(DecodedSamples));
 			return false;
 		}
 
