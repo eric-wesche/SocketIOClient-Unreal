@@ -10,7 +10,7 @@
 #include "HAL/ThreadSafeBool.h"
 #include "RHI.h"
 #include "Misc/FileHelper.h"
-#include "OpusAudioInfo.h"
+#include "Decoders/OpusAudioInfo.h"
 #include "Runtime/Launch/Resources/Version.h"
 #include "Developer/TargetPlatform/Public/Interfaces/IAudioFormat.h"
 #include "CoreMinimal.h"

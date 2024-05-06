@@ -228,16 +228,18 @@ int32 FCUOpusCoder::EncodeFrame(const TArray<uint8>& InPCMFrame, TArray<uint8>& 
 {
 #if WITH_OPUS
 	return opus_encode(Encoder, (const opus_int16*)InPCMFrame.GetData(), FrameSize, OutCompressed.GetData(), MaxPacketSize);
-#endif
+#else
 	return 0;
+#endif
 }
 
 int32 FCUOpusCoder::DecodeFrame(const TArray<uint8>& InCompressedFrame, TArray<uint8>& OutPCMFrame)
 {
 #if WITH_OPUS
 	return opus_decode(Decoder, InCompressedFrame.GetData(), InCompressedFrame.Num(), (opus_int16*)OutPCMFrame.GetData(), FrameSize, 0);
-#endif
+#else
 	return 0;
+#endif
 }
 
 

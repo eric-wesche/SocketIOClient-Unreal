@@ -42,6 +42,7 @@ public class CoreUtility : ModuleRules
 				"RenderCore",
 				"libOpus",
 				"UEOgg",
+                "OpusAudioDecoder"
 			}
             );
 
